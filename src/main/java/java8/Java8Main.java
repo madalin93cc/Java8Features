@@ -76,7 +76,7 @@ public class Java8Main {
          */
         PersonFactory<Person> personFactory = Person::new;
         Person person = personFactory.create("Madalin", "Colezea");
-        System.out.println(person);
+        System.out.println("Person created by person factory: " + person);
 
         /*
         Lambda scopes
