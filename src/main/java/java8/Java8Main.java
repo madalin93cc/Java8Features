@@ -7,6 +7,7 @@ import main.java.java8.interfacesdefaultmethodes.Formula;
 import main.java.java8.interfacesdefaultmethodes.FormulaImpl;
 import main.java.java8.lambdaexpressions.SortList;
 import main.java.java8.lambdaexpressions.SortListImpl;
+import main.java.java8.lambdascopes.LambdaScopes;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -76,6 +77,18 @@ public class Java8Main {
         PersonFactory<Person> personFactory = Person::new;
         Person person = personFactory.create("Madalin", "Colezea");
         System.out.println(person);
+
+        /*
+        Lambda scopes
+         */
+        // local variables
+        final int nr = 2; // works without final
+        Converter<Integer, String> converterwithlocal = (from) -> String.valueOf(from + nr);
+        System.out.println("Lambda using local variable: " + converterwithlocal.convert(2));
+        // lambda scopers
+        LambdaScopes lambdaScopes = new LambdaScopes();
+        lambdaScopes.testScopes();
+
     }
 
 }
