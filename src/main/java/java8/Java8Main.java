@@ -3,6 +3,9 @@ package main.java.java8;
 import main.java.java8.constructorreference.Person;
 import main.java.java8.constructorreference.PersonFactory;
 import main.java.java8.functionalinterfaces.Converter;
+import main.java.java8.functionalinterfaces.Functions;
+import main.java.java8.functionalinterfaces.Predicates;
+import main.java.java8.functionalinterfaces.SupplierTest;
 import main.java.java8.interfacesdefaultmethodes.Formula;
 import main.java.java8.interfacesdefaultmethodes.FormulaImpl;
 import main.java.java8.lambdaexpressions.SortList;
@@ -12,6 +15,8 @@ import main.java.java8.lambdascopes.LambdaScopes;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 /**
  * Java8Main.java
@@ -88,6 +93,13 @@ public class Java8Main {
         // lambda scopers
         LambdaScopes lambdaScopes = new LambdaScopes();
         lambdaScopes.testScopes();
+
+        /*
+        Built-in Functional Interfaces
+         */
+        Supplier<SupplierTest> supplierTestSupplier = SupplierTest::new;
+        SupplierTest supplierTest = supplierTestSupplier.get();
+        supplierTest.testSupplier();
 
     }
 
