@@ -4,6 +4,7 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * SequentialStreams.java
@@ -62,5 +63,20 @@ public class SequentialStreams {
                 .stream()
                 .noneMatch((s) -> s.startsWith("z"));
         System.out.println("No one match: " + noOne);
+
+        System.out.println("Sequential stream match example:");
+        Long count = stringList
+                .stream()
+                .filter((s) -> s.startsWith("a"))
+                .count();
+        System.out.println("Strarts with a: " + count + "elements");
+
+        System.out.println("Sequential stream reduce example:");
+        Optional<String> stringOptional =
+                stringList
+                        .stream()
+                        .sorted()
+                        .reduce((s1, s2) -> s1 + "#" + s2);
+        stringOptional.ifPresent(System.out::println);
     }
 }

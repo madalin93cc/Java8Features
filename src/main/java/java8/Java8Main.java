@@ -2,6 +2,7 @@ package main.java.java8;
 
 import main.java.java8.constructorreference.Person;
 import main.java.java8.constructorreference.PersonFactory;
+import main.java.java8.dateapi.DateApi;
 import main.java.java8.functionalinterfaces.Converter;
 import main.java.java8.functionalinterfaces.Functions;
 import main.java.java8.functionalinterfaces.Predicates;
@@ -11,6 +12,8 @@ import main.java.java8.interfacesdefaultmethodes.FormulaImpl;
 import main.java.java8.lambdaexpressions.SortList;
 import main.java.java8.lambdaexpressions.SortListImpl;
 import main.java.java8.lambdascopes.LambdaScopes;
+import main.java.java8.map.Map8;
+import main.java.java8.streams.ParalellStreams;
 import main.java.java8.streams.SequentialStreams;
 
 import java.util.Arrays;
@@ -108,6 +111,23 @@ public class Java8Main {
         SequentialStreams sequentialStreams = new SequentialStreams();
         sequentialStreams.testSequentialStrean();
 
+        /*
+        Parallel streams
+         */
+        ParalellStreams paralellStreams = new ParalellStreams();
+        paralellStreams.testParalellStreams();
+
+        /*
+        Map
+         */
+        Map8 map8 = new Map8();
+        map8.testMap();
+
+        /*
+        Date API
+         */
+        DateApi dateApi = new DateApi();
+        dateApi.testDateApi();
     }
 
 }
