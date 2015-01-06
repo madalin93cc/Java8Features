@@ -11,6 +11,7 @@ import main.java.java8.interfacesdefaultmethodes.FormulaImpl;
 import main.java.java8.lambdaexpressions.SortList;
 import main.java.java8.lambdaexpressions.SortListImpl;
 import main.java.java8.lambdascopes.LambdaScopes;
+import main.java.java8.streams.SequentialStreams;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -100,6 +101,12 @@ public class Java8Main {
         Supplier<SupplierTest> supplierTestSupplier = SupplierTest::new;
         SupplierTest supplierTest = supplierTestSupplier.get();
         supplierTest.testSupplier();
+
+        /*
+        Sequential streams
+         */
+        SequentialStreams sequentialStreams = new SequentialStreams();
+        sequentialStreams.testSequentialStrean();
 
     }
 
